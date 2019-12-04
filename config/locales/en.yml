@@ -1,0 +1,19 @@
+en:
+  spree:
+    bid: Bid
+    bids: Bids
+    back_to_bids_list: Back to bids list
+    make_bid: Bid up
+    back_to_bids_list: Back to bids list
+    new_bid: New bid
+    highest_bid: highest bid
+    amount: Amount
+    my_bids: My bids
+    all_bids: All bids pending
+    by_products: Pending by products
+    by_users: Pending by users
+    bid_accepted: Bid accepted
+    bids_accepted: Once the selected bid is accepted, pending bids related to the product will be removed and the product will be deactivated so as not to accept more bids.
+    admin:
+      tab:
+        Bids: Bids

@@ -1,0 +1,18 @@
+es:
+  spree:
+    bid: Puja
+    bids: Pujas
+    make_bid: Pujar
+    back_to_bids_list: Volver a listado de pujas
+    new_bid: Crear nueva Puja
+    highest_bid: Puja más alta
+    amount: Cantidad
+    my_bids: Mis pujas
+    all_bids: Todas las pujas pendientes
+    by_products: Pendientes por productos
+    by_users: Pendientes por usuarios
+    bid_accepted: Pujas aceptadas
+    bids_accepted: Una vez la puja seleccionada es aceptada, se eliminarán las pujas pendientes relacionadas con el producto y se desactivará el producto para no aceptar más pujas.
+    admin:
+      tab:
+        Bids: Pujas
