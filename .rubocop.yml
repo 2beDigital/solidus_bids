@@ -1,0 +1,11 @@
+require: rubocop-rspec
+require: rubocop-rails
+
+inherit_gem:
+  relaxed-rubocop: .rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'spec/dummy/**/*'
+    - 'vendor/bundle/**/*'
+  TargetRubyVersion: 2.1

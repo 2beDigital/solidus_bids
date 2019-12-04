@@ -1,0 +1,4 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_bids/version.rb'
+  message: Bump Solidus Bids to %{version}
