@@ -1,0 +1,18 @@
+<% content_for :tabs do %>
+  <nav>
+    <ul class="tabs" data-hook="admin_bid_tabs">
+      <%= content_tag :li, class: current == 'All bids' ? 'active' : nil do %>
+        <%= link_to Spree.t(:all_bids), spree.admin_bids_path %>
+      <% end if can?(:admin, Spree::Store) %>
+      <%= content_tag :li, class: current == 'By Products' ? 'active' : nil do %>
+        <%= link_to Spree.t(:by_products), spree.admin_bids_by_products_path %>
+      <% end if can?(:admin, Spree::Store) %>
+      <%= content_tag :li, class: current == 'By Users' ? 'active' : nil do %>
+        <%= link_to Spree.t(:by_users), spree.admin_bids_by_user_path  %>
+      <% end if can?(:admin, Spree::Store) %>
+      <%= content_tag :li, class: current == 'Bids Accepted' ? 'active' : nil do %>
+        <%= link_to Spree.t(:bid_accepted), spree.admin_bids_accepted_path  %>
+      <% end if can?(:admin, Spree::Store) %>
+    </ul>
+  </nav>
+<% end %>

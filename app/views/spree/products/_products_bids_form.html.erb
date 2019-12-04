@@ -1,0 +1,24 @@
+<% if try_spree_current_user && try_spree_current_user.applyforretailer && @product.retail_only %>
+  <% if @product.bids.present? %>
+    <div class="row">
+      <div class="col-12 mt-3">
+        <h4> <strong><%= Spree.t(:highest_bid) %>:</strong> <%= Spree::Money.new(@product.bids.order(amount: :desc).first.amount) %></h4>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <%= form_for @bid, :url => bids_create_or_update_path, :html => { :novalidate => '', :class => 'col-12 row my-2 form-horizontal'}, method: :post do |f| %>
+        <%= f.hidden_field :store_id, :value => current_store.id %>
+        <%= f.hidden_field :product_id, :value => @product.id %>
+        <%= f.hidden_field :user_id, :value => try_spree_current_user.id %>
+        <div class="col-6">
+          <%= f.field_container :amount do %>
+            <%= f.text_field :amount, class: 'fullwidth p-1', placeholder: Spree.t(:amount), style: 'width:100%' %>
+          <% end %>
+        </div>
+        <div class="col-6">
+          <%= f.submit Spree.t(:make_bid), :alt => Spree.t(:make_bid), :class => 'btn btn-primary', :id => 'bids_submit', :title => Spree.t(:make_bid) %>
+        </div>          
+    <% end %>
+  </div>
+<% end %>

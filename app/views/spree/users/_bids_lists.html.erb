@@ -1,0 +1,27 @@
+<h3><%= Spree.t(:my_bids) %></h3>
+
+<% if @user.bids.present? %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th class='text-center'><%= Spree.t(:product) %></th>
+      <th class='text-center'><%= Spree.t(:amount) %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @user.bids.each do |bid| %>
+      <tr class="<%= cycle('even', 'odd') %>">
+        <td class='text-center'>
+          <%= link_to product_path(bid.product) do %>
+            <%= image_tag bid.product.display_image.attachment(:mini) %>
+          <% end %>
+        </td>
+        <td class='text-center'><%= to_money(bid.amount) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= Spree.t(:you_have_no_orders_yet) %></p>
+<% end %>
+<br />

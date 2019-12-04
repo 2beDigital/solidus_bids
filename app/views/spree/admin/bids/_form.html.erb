@@ -1,0 +1,39 @@
+<div class="container">
+  <div data-hook="admin_bids_form_fields" class="row">
+    <div class="col-md-12">
+        <div data-hook="store_select" class="field">
+          <%= f.label Spree.t(:user) %>
+          <div class="clear"></div>
+          <%= collection_select(:bid, :user_id, Spree::User.where(applyforretailer: true), :id, :email, {}, {:class => 'select2 fullwidth'}) %>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div data-hook="store_select" class="field">
+          <%= f.label Spree.t(:product) %>
+          <div class="clear"></div>
+          <%= collection_select(:bid, :product_id, Spree::Product.where.not(retail_only: false, available_on: nil), :id, :name, {}, {:class => 'select2 fullwidth'}) %>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <%= f.field_container :amount do %>
+          <%= f.label :amount %>
+          <%= f.text_field :amount, class: 'fullwidth' %>
+        <% end %>
+      </div>
+      <div class="col-md-3">
+        <div data-hook="store_select" class="field">
+          <%= f.label :accepted do %>
+            <%= f.check_box :accepted %> <%= Spree.t(:accepted) %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div data-hook="store_select" class="field">
+          <%= f.label :active do %>
+            <%= f.check_box :active %> <%= Spree.t(:active) %>
+          <% end %>
+        </div>
+      </div>
+      <%= f.hidden_field :store_id, :value => current_store.id %>
+  </div>
+</div>

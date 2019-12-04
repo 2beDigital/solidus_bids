@@ -1,0 +1,21 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:bid) %>
+<% end %>
+
+<% content_for :page_actions do %>
+	<li>
+		<%#= link_to Spree.t(:get_access_token), admin_get_access_token_path, :icon => 'icon-arrow-left', class: 'button', method: 'post' %>
+	</li>
+	<li>
+    <%= link_to Spree.t(:back_to_bids_list), admin_bids_path, class: 'button' %>
+  </li>
+<% end %>
+
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @bid } %>
+
+<%= form_for [:admin,  @bid] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= render :partial => 'spree/admin/shared/edit_resource_links' %>
+  </fieldset>
+<% end %>
