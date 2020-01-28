@@ -1,6 +1,6 @@
 <h3><%= Spree.t(:my_bids) %></h3>
 
-<% if @user.bids.present? %>
+<% if @user.bids.present? && is_retailer? %>
   <table class="table">
     <thead>
     <tr>
@@ -22,6 +22,6 @@
     </tbody>
   </table>
 <% else %>
-  <p><%= Spree.t(:you_have_no_orders_yet) %></p>
+  <p><%= Spree.t(:you_have_no_bids_yet) %></p>
 <% end %>
 <br />

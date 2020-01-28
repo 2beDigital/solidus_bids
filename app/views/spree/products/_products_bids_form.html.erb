@@ -1,4 +1,4 @@
-<% if try_spree_current_user && try_spree_current_user.applyforretailer && @product.retail_only %>
+<% if is_retailer? && @product.retail_only %>
   <% if @product.bids.present? %>
     <div class="row">
       <div class="col-12 mt-3">

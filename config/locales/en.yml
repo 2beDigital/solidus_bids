@@ -14,6 +14,7 @@ en:
     by_users: Pending by users
     bid_accepted: Bid accepted
     bids_accepted: Once the selected bid is accepted, pending bids related to the product will be removed and the product will be deactivated so as not to accept more bids.
+    you_have_no_bids_yet: You have not bids yet
     admin:
       tab:
         Bids: Bids
